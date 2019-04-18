@@ -16,6 +16,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import pl.coderslab.app.training.TrainingConverter;
+import pl.coderslab.app.exercise.ExerciseConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;
@@ -53,15 +55,32 @@ public class AppConfig implements WebMvcConfigurer {
         return new LocalValidatorFactoryBean();
     }
 
-    @Bean(name="localeResolver")
+    @Bean(name = "localeResolver")
     public LocaleContextResolver getLocaleContextResolver() {
         SessionLocaleResolver localeResolver = new SessionLocaleResolver();
-        localeResolver.setDefaultLocale(new Locale("pl","PL"));
-        return localeResolver; }
+        localeResolver.setDefaultLocale(new Locale("pl", "PL"));
+        return localeResolver;
+    }
 
     @Override
     public void addResourceHandlers(ResourceHandlerRegistry registry) {
         registry.addResourceHandler("/resources/**").addResourceLocations("/resources/");
         registry.addResourceHandler("/webjars/**").addResourceLocations("classpath:/META-INF/resources/webjars/");
+    }
+
+    @Override
+    public void addFormatters(FormatterRegistry registry) {
+        registry.addConverter(getExerciseConverter());
+        registry.addConverter(getTrainingConverter());
+    }
+
+    @Bean
+    public ExerciseConverter getExerciseConverter() {
+        return new ExerciseConverter();
+    }
+
+    @Bean
+    public TrainingConverter getTrainingConverter() {
+        return new TrainingConverter();
     }
 }
