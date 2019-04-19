@@ -13,10 +13,6 @@ public class UserService {
     @Autowired
     UserRepository userRepository;
 
-    public User findUserbyId(Long id){
-        return userRepository.findById(id).orElse(null);
-    }
-
     public void createUser(User user){
 //     user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         userRepository.save(user);
