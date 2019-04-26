@@ -14,13 +14,13 @@
 
 <div class="container w-75">
 
-    <div class="card">
+    <div class="card transparent">
         <div class="card-body">
             <h3>${userSession.name}, this are your training details:</h3>
         </div>
     </div>
 
-    <div class="card mt-4">
+    <div class="card mt-4 transparent">
         <div class="card-body">
             <table class="table table-hover">
                 <tr>
@@ -33,9 +33,9 @@
                 <c:forEach items="${historyList}" var="var">
                     <tr>
                         <td>${var.exercise.name}</td>
-                        <td>${var.weight}</td>
+                        <td>${var.weight} kg</td>
                         <td>${var.reps}</td>
-                        <td><a class="btn btn-info btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
+                        <td><a class="btn btn-outline-success btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
                     </tr>
                 </c:forEach>
             </table>

@@ -23,7 +23,8 @@
                         <label for="trainingName">Training name:</label>
                         <input type="text" name="trainingName" id="trainingName" class="form-control"/><br>
                         <input class="btn btn-info btn-sm" type="submit" value="createTraining"/>
-                    </form>
+                    </form><br>
+                    <a href="exercise/list" class="btn btn-warning btn-sm">Exercise List</a>
                 </div>
                 <div class="col-md-8">
                     <div class="card-header">Your last 3 workouts</div>
@@ -33,16 +34,20 @@
                             <th scope="col">Name</th>
                             <th scope="col">Performed</th>
                             <th scope="col">Details</th>
+<%--                            <th scope="col">Options</th>--%>
                         </tr>
                         </thead>
                         <tbod>
                             <c:forEach items="${lastTrainings}" var="var">
                                 <tr>
                                     <td>${var.name}</td>
-                                    <td>${var.created}</td>
+                                    <td>${var.strCreated}</td>
                                     <td>
-                                        <a class="btn btn-primary btn-lg btn-sm" href="/history/${var.id}">Details</a>
+                                        <a class="btn btn-outline-success btn-sm" href="/history/${var.id}">Details</a>
                                     </td>
+<%--                                    <td>--%>
+<%--                                        <a class="btn btn-danger btn-sm" href="/training/delete/${var.id}">Delete</a>--%>
+<%--                                    </td>--%>
                                 </tr>
                             </c:forEach>
                         </tbod>
@@ -52,6 +57,5 @@
         </div>
     </div>
 </div>
-
 </body>
 </html>

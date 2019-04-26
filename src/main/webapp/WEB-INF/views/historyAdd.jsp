@@ -1,4 +1,5 @@
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <html>
 <head>
@@ -12,13 +13,13 @@
 <%@include file="header.jsp" %>
 <div class="container w-75">
 
-    <div class="card">
+    <div class="card transparent">
         <div class="card-body">
             <h3>${user.name}, add training record:</h3>
         </div>
     </div>
 
-    <div class="card mt-4">
+    <div class="card mt-4 transparent">
         <div class="card-body">
             <div class="row">
                 <div class="form-group col-md-4">
@@ -26,34 +27,39 @@
                         <label for="exerciseId">Exercise:</label>
                         <form:select class="form-control" items="${exerciseList}" path="exercise" itemLabel="name"
                                      itemValue="id" multiple="false" id="exerciseId"/><br>
+
                         <label for="weightId">Weight:</label>
                         <form:input path="weight" id="weightId" class="form-control" type="number"/>
+                        <form:errors path="weight" cssClass="error" element="div"/>
+
                         <label for="repsId">Reps:</label>
-                        <form:input path="reps" id="repsId" class="form-control" type="number"/><br>
+                        <form:input path="reps" id="repsId" class="form-control" type="number"/>
+                        <form:errors path="reps" cssClass="error" element="div"/>
+
                         <input class="btn btn-primary btn-lg btn-sm" type="submit" value="Save">
                     </form:form>
                 </div>
                 <div class="col-md-8">
-                    <table class="table table-hover table-light">
-                        <thead>
-                        <tr>
-                            <th scope="col">Name</th>
-                            <th scope="col">Performed</th>
-                            <th scope="col">Details</th>
-                        </tr>
-                        </thead>
-                        <tbod>
-                            <c:forEach items="${lastTrainings}" var="var">
-                                <tr>
-                                    <td>${var.name}</td>
-                                    <td>${var.created}</td>
-                                    <td>
-                                        <a class="btn btn-primary btn-lg btn-sm" href="/history/${var.id}">Details</a>
-                                    </td>
-                                </tr>
-                            </c:forEach>
-                        </tbod>
-                    </table>
+<%--                    <table class="table table-hover table-light">--%>
+<%--                        <thead>--%>
+<%--                        <tr>--%>
+<%--                            <th scope="col">Name</th>--%>
+<%--                            <th scope="col">Performed</th>--%>
+<%--                            <th scope="col">Details</th>--%>
+<%--                        </tr>--%>
+<%--                        </thead>--%>
+<%--                        <tbod>--%>
+<%--                            <c:forEach items="" var="var">--%>
+<%--                                <tr>--%>
+<%--                                    <td>${var.history.reps}</td>--%>
+<%--                                    <td>${var.created}</td>--%>
+<%--                                    <td>--%>
+<%--                                        <a class="btn btn-primary btn-lg btn-sm" href="/history/${var.id}">Details</a>--%>
+<%--                                    </td>--%>
+<%--                                </tr>--%>
+<%--                            </c:forEach>--%>
+<%--                        </tbod>--%>
+<%--                    </table>--%>
                 </div>
 
             </div>

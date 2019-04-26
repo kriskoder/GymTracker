@@ -14,13 +14,13 @@
 
 <div class="container w-75">
 
-    <div class="card">
+    <div class="card transparent">
         <div class="card-body">
             <h3>Your progress on ${exerciseName}:</h3>
         </div>
     </div>
 
-    <div class="card mt-4">
+    <div class="card mt-4 transparent">
         <div class="card-body">
             <div class="row">
                 <div class="col-md-6">
@@ -32,9 +32,9 @@
                         </tr>
                         <c:forEach items="${progress}" var="var">
                             <tr>
-                                <td>${var.training.created}</td>
+                                <td>${var.training.strCreated}</td>
                                 <td>${var.reps}</td>
-                                <td>${var.weight}</td>
+                                <td>${var.weight} kg</td>
                             </tr>
                         </c:forEach>
                     </table>
@@ -46,10 +46,10 @@
                             <th>Max Weight</th>
                         </tr>
                         <tr>
-                            <td>${max.weight}</td>
+                            <td>${max.weight} kg</td>
                         </tr>
                         <tr>
-                            <th>${max.training.created}</th>
+                            <th>${max.training.strCreated}</th>
                         </tr>
                     </table>
                 </div>
@@ -60,10 +60,10 @@
                             <th>Min Weight</th>
                         </tr>
                         <tr>
-                            <td>${min.weight}</td>
+                            <td>${min.weight} kg</td>
                         </tr>
                         <tr>
-                            <th>${min.training.created}</th>
+                            <th>${min.training.strCreated}</th>
                         </tr>
                     </table>
                 </div>
