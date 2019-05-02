@@ -14,8 +14,11 @@ public class UserService {
     UserRepository userRepository;
 
     public void createUser(User user){
-//     user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
+     user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));
         userRepository.save(user);
     }
 
+    public User findByEmail(String email){
+       return userRepository.findByEmail(email);
+    }
 }
