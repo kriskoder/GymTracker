@@ -7,10 +7,9 @@ import java.util.List;
 
 public interface HistoryRepository extends JpaRepository<History, Long> {
 
-    List<History> findHistoryByUserIdAndAndTrainingId(Long userId, Long trainingId);
+    List<History> findHistoryByUserIdAndTrainingId(Long userId, Long trainingId);
 
     List<History> findHistoryByUserIdAndExerciseIdOrderByTrainingDesc(Long userId, Long exerciseId);
-
 
     History findTopHistoryByUserIdAndExerciseIdOrderByWeightDesc(Long userId, Long exerciseId);
 
