@@ -15,7 +15,7 @@
 
     <div class="card transparent">
         <div class="card-body">
-            <h3>${user.name}, add training record:</h3>
+            <h3>${userSession.name}, add training record:</h3>
         </div>
     </div>
 
@@ -39,29 +39,6 @@
                         <input class="btn btn-primary btn-lg btn-sm" type="submit" value="Save">
                     </form:form>
                 </div>
-                <div class="col-md-8">
-<%--                    <table class="table table-hover table-light">--%>
-<%--                        <thead>--%>
-<%--                        <tr>--%>
-<%--                            <th scope="col">Name</th>--%>
-<%--                            <th scope="col">Performed</th>--%>
-<%--                            <th scope="col">Details</th>--%>
-<%--                        </tr>--%>
-<%--                        </thead>--%>
-<%--                        <tbod>--%>
-<%--                            <c:forEach items="" var="var">--%>
-<%--                                <tr>--%>
-<%--                                    <td>${var.history.reps}</td>--%>
-<%--                                    <td>${var.created}</td>--%>
-<%--                                    <td>--%>
-<%--                                        <a class="btn btn-primary btn-lg btn-sm" href="/history/${var.id}">Details</a>--%>
-<%--                                    </td>--%>
-<%--                                </tr>--%>
-<%--                            </c:forEach>--%>
-<%--                        </tbod>--%>
-<%--                    </table>--%>
-                </div>
-
             </div>
         </div>
     </div>
