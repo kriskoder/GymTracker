@@ -1,5 +1,6 @@
 package pl.coderslab.app.exercise;
 
+import org.hibernate.property.access.internal.PropertyAccessStrategyNoopImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -7,12 +8,13 @@ import org.springframework.validation.BindingResult;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.util.List;
 
 @Controller
 @RequestMapping("exercise")
 public class ExerciseController {
     @Autowired
-    ExerciseRepository exerciseRepository;
+    ExerciseService exerciseService;
 
     @GetMapping("/add")
     private String addExerciseStep1(Model model){
@@ -25,7 +27,13 @@ public class ExerciseController {
         if(bindingResult.hasErrors()){
             return "exerciseAdd";
         }
-        exerciseRepository.save(exercise);
+        exerciseService.create(exercise);
         return "exerciseAdd";
+    }
+
+    @RequestMapping("/list")
+    public String exerciseList(Model model){
+        model.addAttribute("exerciseList", exerciseService.findAll());
+        return "exerciseList";
     }
 }
