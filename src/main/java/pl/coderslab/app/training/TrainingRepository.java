@@ -9,4 +9,6 @@ import java.util.List;
 public interface TrainingRepository extends JpaRepository<Training, Long> {
 
 List<Training> findFirst3ByUserIdOrderByCreatedDesc(Long userId);
+
+List<Training> findAllByUserIdOrderByCreatedDesc(Long userId);
 }
