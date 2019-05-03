@@ -22,7 +22,7 @@
                     <form method="post" action="/training/create">
                         <label for="trainingName">Training name:</label>
                         <input type="text" name="trainingName" id="trainingName" class="form-control"/><br>
-                        <input class="btn btn-info btn-sm" type="submit" value="createTraining"/>
+                        <input class="btn btn-success btn-sm" type="submit" value="createTraining"/>
                     </form><br>
                     <a href="exercise/list" class="btn btn-warning btn-sm">Exercise List</a>
                 </div>
@@ -34,7 +34,7 @@
                             <th scope="col">Name</th>
                             <th scope="col">Performed</th>
                             <th scope="col">Details</th>
-<%--                            <th scope="col">Options</th>--%>
+                            <th scope="col">Options</th>
                         </tr>
                         </thead>
                         <tbod>
@@ -43,11 +43,12 @@
                                     <td>${var.name}</td>
                                     <td>${var.strCreated}</td>
                                     <td>
-                                        <a class="btn btn-outline-success btn-sm" href="/history/${var.id}">Details</a>
+                                        <a class="btn btn-outline-info btn-sm" href="/history/${var.id}">Details</a>
                                     </td>
-<%--                                    <td>--%>
-<%--                                        <a class="btn btn-danger btn-sm" href="/training/delete/${var.id}">Delete</a>--%>
-<%--                                    </td>--%>
+                                    <td>
+                                        <a class="btn btn-outline-warning btn-sm" href="/training/edit/${var.id}">Edit</a>
+                                        <a class="btn btn-outline-danger btn-sm" href="/training/delete/${var.id}">Delete</a>
+                                    </td>
                                 </tr>
                             </c:forEach>
                         </tbod>

@@ -10,7 +10,7 @@
 </head>
 <body>
 
-<%@include file="header.jsp"  %>
+<%@include file="header.jsp" %>
 
 <div class="container w-75">
 
@@ -35,7 +35,7 @@
                         <td>${var.exercise.name}</td>
                         <td>${var.weight} kg</td>
                         <td>${var.reps}</td>
-                        <td><a class="btn btn-outline-success btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
+                        <td><a class="btn btn-outline-info btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
                     </tr>
                 </c:forEach>
             </table>

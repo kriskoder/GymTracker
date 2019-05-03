@@ -55,6 +55,11 @@ public class TrainingController {
         return "redirect:add";
     }
 
+    @GetMapping("/delete/{id}")
+    public String deleteTrainingById(@PathVariable Long id){
+        trainingService.deleteTraining(id);
+        return "redirect:/training";
+    }
 
 
     @ModelAttribute("exerciseList")
