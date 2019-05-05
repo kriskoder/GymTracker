@@ -29,7 +29,7 @@ public class History {
     private int reps;
     @ManyToOne
     private Exercise exercise;
-    @ManyToOne(cascade = CascadeType.REMOVE)
+    @ManyToOne(cascade = CascadeType.ALL)
     private Training training;
     @Override
     public String toString() {

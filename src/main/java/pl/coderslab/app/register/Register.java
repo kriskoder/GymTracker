@@ -32,7 +32,7 @@ public class Register {
             return "register";
         }
         User userToCheck = userService.findByEmail(user.getEmail());
-        if(user != null){
+        if(userToCheck != null){
             return "redirect:/register";
         }
         userService.createUser(user);
