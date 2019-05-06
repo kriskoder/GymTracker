@@ -10,7 +10,7 @@
     <title>Title</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@include file="../header/header.jsp" %>
 <div class="container w-75">
 
     <div class="card transparent">

@@ -34,7 +34,7 @@ public class HistoryController {
         model.addAttribute("max", historyService.getMaxRestult(user.getId(), id));
         model.addAttribute("min", historyService.getMinResult(user.getId(), id));
         model.addAttribute("exerciseName", exerciseService.getExerciseNameById(id));
-        return "progress";
+        return "history/historyProgress";
     }
 
     @GetMapping("/{id}")
@@ -46,6 +46,6 @@ public class HistoryController {
         }
         model.addAttribute("trainingName", trainingService.getTrainingName(id));
         model.addAttribute("historyList", history);
-        return "userHistory";
+        return "user/userHistory";
     }
 }

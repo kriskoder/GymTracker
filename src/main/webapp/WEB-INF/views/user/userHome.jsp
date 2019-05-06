@@ -9,7 +9,7 @@
     <title>Welcome ${userSession.name}</title>
 </head>
 <body>
-<%@include file="header.jsp" %>
+<%@include file="../header/header.jsp" %>
 <div class="container w-75">
 
     <div class="card mt-4 transparent">

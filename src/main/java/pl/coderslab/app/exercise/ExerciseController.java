@@ -23,21 +23,21 @@ public class ExerciseController {
     @GetMapping("/add")
     private String addExerciseStep1(Model model){
         model.addAttribute("exercise", new Exercise());
-        return "exerciseAdd";
+        return "exercise/exerciseAdd";
     }
 
     @PostMapping("/add")
     private String addExerciseStep2(@ModelAttribute @Valid Exercise exercise, BindingResult bindingResult){
         if(bindingResult.hasErrors()){
-            return "exerciseAdd";
+            return "exercise/exerciseAdd";
         }
         exerciseService.create(exercise);
-        return "exerciseAdd";
+        return "exercise/exerciseAdd";
     }
 
     @RequestMapping("/list")
     public String exerciseList(Model model){
         model.addAttribute("exerciseList", exerciseService.findAll());
-        return "exerciseList";
+        return "exercise/exerciseList";
     }
 }

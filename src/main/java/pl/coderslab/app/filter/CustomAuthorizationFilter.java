@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebFilter(urlPatterns = {"/user/*", "/history/*", "/training/*"})
+@WebFilter(urlPatterns = {"/user/*", "/history/*", "/training/*", "/exercise/*"})
 public class CustomAuthorizationFilter extends GenericFilterBean {
 
     @Override

@@ -32,13 +32,13 @@ public class TrainingController {
     public String userHome(Model model, HttpSession session) {
         User user = (User) session.getAttribute("userSession");
         model.addAttribute("lastTrainings", trainingService.getAllUserTrainings(user.getId()));
-        return "historyList";
+        return "history/historyList";
     }
 
     @GetMapping("/add")
     public String addRecordStep1(Model model) {
         model.addAttribute("history", new History());
-        return "historyAdd";
+        return "history/historyAdd";
     }
 
     @PostMapping("/add")

@@ -17,11 +17,11 @@ public class Logout {
     @GetMapping("")
     public String logout(Model model, HttpServletRequest request,  HttpServletResponse response) {
         Cookie c = WebUtils.getCookie(request, "JSESSIONID");
-        if (c != null) {
+
             c.setMaxAge(0);
             c.setPath("/");
             response.addCookie(c);
-        }
+
         model.addAttribute("userSession", null);
         return "logout";
     }

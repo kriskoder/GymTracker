@@ -24,6 +24,6 @@ public class UserController {
         final int MAX_TRAINING_NUMBER = 3;
         User user = (User)session.getAttribute("userSession");
         model.addAttribute("lastTrainings", trainingService.getLastTrainingsByUserIdLimitMaxTrainingNumber(user.getId(), MAX_TRAINING_NUMBER));
-        return "userHome";
+        return "user/userHome";
     }
 }

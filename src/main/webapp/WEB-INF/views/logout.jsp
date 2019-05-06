@@ -9,13 +9,21 @@
 </head>
 <body>
 <header class="navbar navbar-light bg-light transparent ">
-   <div><a href="/login">LogIn</a></div>
-    <div><a href="/register">Register</a></div>
+
 </header>
+<%--<div class="container w-25">--%>
+<%--    <div class="card cardBackground1">--%>
+<%--        <div class="card-body">--%>
+<%--            <div><a class="btn btn-warning btn-sm" href="register">Register</a></div><br>--%>
+<%--            --%>
+<%--        </div>--%>
+<%--    </div>--%>
+<%--</div>--%>
 <div class="container w-25">
     <div class="card cardBackground1" >
         <div class="card-body">
            You have successfully logged out
+            <a class="btn btn-info btn-sm" href="login">Login</a>
         </div>
     </div>
 </div>

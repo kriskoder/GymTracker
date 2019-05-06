@@ -6,41 +6,31 @@
     <script src="/webjars/bootstrap/4.3.1/js/bootstrap.min.js"></script>
     <link href="/webjars/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet"/>
     <link href="/resources/css/main.css" rel="stylesheet" type="text/css"/>
-    <title>History</title>
+    <title>ExerciseList</title>
 </head>
 <body>
 
-<%@include file="header.jsp" %>
+<%@include file="../header/header.jsp" %>
 
 <div class="container w-75">
 
     <div class="card mt-4 transparent">
-        <div class="card-header">Training history</div>
+        <div class="card-header">Exercise List</div>
         <div class="card-body">
-
             <div class="row">
                 <div class="col-md-12">
                     <table class="table table-hover table-light">
                         <thead>
                         <tr>
                             <th scope="col">Name</th>
-                            <th scope="col">Performed</th>
-                            <th scope="col">Details</th>
-                            <th scope="col">Options</th>
+                            <th scope="col">Technique</th>
                         </tr>
                         </thead>
                         <tbod>
-                            <c:forEach items="${lastTrainings}" var="var">
+                            <c:forEach items="${exerciseList}" var="var">
                                 <tr>
-                                    <td>${var.name}</td>
-                                    <td>${var.strCreated}</td>
-                                    <td>
-                                        <a class="btn btn-outline-info btn-sm" href="/history/${var.id}">Details</a>
-                                    </td>
-                                    <td>
-                                        <a class="btn btn-outline-warning btn-sm" href="/training/edit/${var.id}">Edit</a>
-                                        <a class="btn btn-outline-danger btn-sm" href="/training/delete/${var.id}">Delete</a>
-                                    </td>
+                                    <td style="width: 200px"> ${var.name}</td>
+                                    <td><iframe width="560" height="315" src="${var.link}" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe></td>
                                 </tr>
                             </c:forEach>
                         </tbod>
@@ -50,5 +40,9 @@
         </div>
     </div>
 </div>
+
 </body>
+
 </html>
+
+
