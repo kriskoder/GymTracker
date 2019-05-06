@@ -6,15 +6,19 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
 import pl.coderslab.app.user.User;
+import pl.coderslab.app.user.UserController;
 import pl.coderslab.app.user.UserService;
 
 @Controller
 @RequestMapping("/login")
 @SessionAttributes("userSession")
-public class LoginController {
+public class Login {
 
-    @Autowired
-    UserService userService;
+    private UserService userService;
+
+    public Login(UserService userService){
+        this.userService = userService;
+    }
 
     @GetMapping("")
     public String loginStep1() {

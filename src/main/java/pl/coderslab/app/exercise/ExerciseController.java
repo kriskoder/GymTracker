@@ -13,8 +13,12 @@ import java.util.List;
 @Controller
 @RequestMapping("exercise")
 public class ExerciseController {
-    @Autowired
-    ExerciseService exerciseService;
+    
+   private  ExerciseService exerciseService;
+   
+    public ExerciseController(ExerciseService exerciseService) {
+        this.exerciseService = exerciseService;
+    }
 
     @GetMapping("/add")
     private String addExerciseStep1(Model model){

@@ -13,11 +13,11 @@ import java.util.List;
 @Transactional
 public class HistoryService {
 
-    @Autowired
-    HistoryRepository historyRepository;
+    private HistoryRepository historyRepository;
 
-    @Autowired
-    ExerciseRepository exerciseRepository;
+    public HistoryService(HistoryRepository historyRepository) {
+        this.historyRepository = historyRepository;
+    }
 
     public void create(History history, Training training, User user){
         history.setTraining(training);

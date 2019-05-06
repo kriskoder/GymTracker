@@ -9,8 +9,12 @@ import java.util.List;
 @Service
 @Transactional
 public class ExerciseService {
-    @Autowired
-    ExerciseRepository exerciseRepository;
+
+    private ExerciseRepository exerciseRepository;
+
+    public ExerciseService(ExerciseRepository exerciseRepository) {
+        this.exerciseRepository = exerciseRepository;
+    }
 
     public void create(Exercise exercise){
         exerciseRepository.save(exercise);

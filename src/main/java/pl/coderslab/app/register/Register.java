@@ -17,8 +17,12 @@ import javax.validation.Valid;
 @RequestMapping("/register")
 public class Register {
 
-    @Autowired
-    UserService userService;
+    private UserService userService;
+
+    public Register(UserService userService ){
+        this.userService = userService;
+    }
+
 
     @GetMapping("")
     public String addUserStep1(@Valid Model model) {

@@ -12,14 +12,16 @@ import javax.servlet.http.HttpServletResponse;
 @Controller
 @RequestMapping("/logout")
 @SessionAttributes("userSession")
-public class LogoutController {
+public class Logout {
 
     @GetMapping("")
     public String logout(Model model, HttpServletRequest request,  HttpServletResponse response) {
         Cookie c = WebUtils.getCookie(request, "JSESSIONID");
-        c.setMaxAge(0);
-        c.setPath("/");
-        response.addCookie(c);
+        if (c != null) {
+            c.setMaxAge(0);
+            c.setPath("/");
+            response.addCookie(c);
+        }
         model.addAttribute("userSession", null);
         return "logout";
     }

@@ -13,13 +13,17 @@ import javax.servlet.http.HttpSession;
 @RequestMapping("user")
 public class UserController {
 
-    @Autowired
-    TrainingService trainingService;
+    private TrainingService trainingService;
+
+    public UserController(TrainingService trainingService) {
+        this.trainingService = trainingService;
+    }
 
     @RequestMapping("")
     public String userHome(Model model, HttpSession session) {
+        final int MAX_TRAINING_NUMBER = 3;
         User user = (User)session.getAttribute("userSession");
-        model.addAttribute("lastTrainings", trainingService.getLast3TrainingsByUserId(user.getId()));
+        model.addAttribute("lastTrainings", trainingService.getLastTrainingsByUserIdLimitMaxTrainingNumber(user.getId(), MAX_TRAINING_NUMBER));
         return "userHome";
     }
 }

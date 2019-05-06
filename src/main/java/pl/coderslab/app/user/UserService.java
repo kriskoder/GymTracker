@@ -10,8 +10,11 @@ import javax.transaction.Transactional;
 @Transactional
 public class UserService {
 
-    @Autowired
-    UserRepository userRepository;
+    private UserRepository userRepository;
+
+    public UserService(UserRepository userRepository) {
+        this.userRepository = userRepository;
+    }
 
     public void createUser(User user){
      user.setPassword(BCrypt.hashpw(user.getPassword(), BCrypt.gensalt()));

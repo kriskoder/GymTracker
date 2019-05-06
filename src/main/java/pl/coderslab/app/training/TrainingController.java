@@ -18,14 +18,15 @@ import java.util.List;
 @SessionAttributes("training")
 public class TrainingController {
 
-    @Autowired
-    HistoryService historyService;
+    private HistoryService historyService;
+    private ExerciseService exerciseService;
+    private TrainingService trainingService;
 
-    @Autowired
-    ExerciseService exerciseService;
-
-    @Autowired
-    TrainingService trainingService;
+    public TrainingController(HistoryService historyService, ExerciseService exerciseService, TrainingService trainingService) {
+        this.historyService = historyService;
+        this.exerciseService = exerciseService;
+        this.trainingService = trainingService;
+    }
 
     @RequestMapping("")
     public String userHome(Model model, HttpSession session) {
@@ -60,7 +61,6 @@ public class TrainingController {
         trainingService.deleteTraining(id);
         return "redirect:/training";
     }
-
 
     @ModelAttribute("exerciseList")
     public List<Exercise> exerciseList() {

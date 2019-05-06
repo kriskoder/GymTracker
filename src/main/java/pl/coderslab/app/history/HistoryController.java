@@ -17,15 +17,15 @@ import java.util.List;
 @RequestMapping("/history")
 public class HistoryController {
 
-    @Autowired
-    HistoryService historyService;
+    private  HistoryService historyService;
+    private  ExerciseService exerciseService;
+    private  TrainingService trainingService;
 
-    @Autowired
-    ExerciseService exerciseService;
-
-    @Autowired
-    TrainingService trainingService;
-
+    public HistoryController(HistoryService historyService, ExerciseService exerciseService, TrainingService trainingService) {
+        this.historyService = historyService;
+        this.exerciseService = exerciseService;
+        this.trainingService = trainingService;
+    }
 
     @GetMapping("/progress/{id}")
     public String findProgress(Model model, HttpSession session, @PathVariable Long id) {

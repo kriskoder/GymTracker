@@ -11,8 +11,11 @@ import java.util.List;
 @Transactional
 public class TrainingService {
 
-    @Autowired
-    TrainingRepository trainingRepository;
+    private TrainingRepository trainingRepository;
+
+    public TrainingService(TrainingRepository trainingRepository) {
+        this.trainingRepository = trainingRepository;
+    }
 
     public Training create(User user, String name){
         Training training = new Training();
@@ -26,7 +29,7 @@ public class TrainingService {
         return trainingRepository.findById(id).orElse(null).getName();
     }
 
-    public List<Training> getLast3TrainingsByUserId(Long id){
+    public List<Training> getLastTrainingsByUserIdLimitMaxTrainingNumber(Long id, int lastTrainingNumber){
         return trainingRepository.findFirst3ByUserIdOrderByCreatedDesc(id);
     }
 
