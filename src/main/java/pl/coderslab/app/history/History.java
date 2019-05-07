@@ -1,9 +1,10 @@
 package pl.coderslab.app.history;
 
 import lombok.*;
-import pl.coderslab.app.training.Training;
 import pl.coderslab.app.exercise.Exercise;
+import pl.coderslab.app.training.Training;
 import pl.coderslab.app.user.User;
+
 import javax.persistence.*;
 import javax.validation.constraints.Min;
 

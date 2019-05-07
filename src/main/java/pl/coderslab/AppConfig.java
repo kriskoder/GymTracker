@@ -16,8 +16,8 @@ import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 import org.springframework.web.servlet.i18n.SessionLocaleResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
-import pl.coderslab.app.training.TrainingConverter;
 import pl.coderslab.app.exercise.ExerciseConverter;
+import pl.coderslab.app.training.TrainingConverter;
 
 import javax.persistence.EntityManagerFactory;
 import javax.validation.Validator;

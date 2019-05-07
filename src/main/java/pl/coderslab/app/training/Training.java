@@ -3,8 +3,10 @@ package pl.coderslab.app.training;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
 import pl.coderslab.app.user.User;
+
 import javax.persistence.*;
 import java.time.LocalDateTime;
+
 import static pl.coderslab.app.dateFormatter.DateFormatter.formatDate;
 
 @Entity

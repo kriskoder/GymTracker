@@ -1,7 +1,7 @@
 package pl.coderslab.app.training;
 
-        import org.springframework.beans.factory.annotation.Autowired;
-        import org.springframework.core.convert.converter.Converter;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.convert.converter.Converter;
 
 public class TrainingConverter implements Converter<String, Training> {
     @Autowired

@@ -3,7 +3,6 @@ package pl.coderslab.app.filter;
 import org.springframework.web.filter.GenericFilterBean;
 import pl.coderslab.app.user.User;
 
-
 import javax.servlet.FilterChain;
 import javax.servlet.ServletException;
 import javax.servlet.ServletRequest;

@@ -2,6 +2,7 @@ package pl.coderslab.app.training;
 
 import org.springframework.stereotype.Service;
 import pl.coderslab.app.user.User;
+
 import javax.transaction.Transactional;
 import java.util.List;
 
