@@ -35,7 +35,7 @@
                         <td>${var.exercise.name}</td>
                         <td>${var.weight} kg</td>
                         <td>${var.reps}</td>
-                        <td><a class="btn btn-outline-info btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
+                        <td><a class="btn btn-info btn-sm" href="/history/progress/${var.exercise.id}">Progress</a></td>
                     </tr>
                 </c:forEach>
             </table>

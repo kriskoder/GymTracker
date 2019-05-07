@@ -43,11 +43,11 @@
                                     <td>${var.name}</td>
                                     <td>${var.strCreated}</td>
                                     <td>
-                                        <a class="btn btn-outline-info btn-sm" href="/history/${var.id}">Details</a>
+                                        <a class="btn btn-info btn-sm" href="/history/${var.id}">Details</a>
                                     </td>
                                     <td>
-                                        <a class="btn btn-outline-warning btn-sm" href="/training/edit/${var.id}">Edit</a>
-                                        <a class="btn btn-outline-danger btn-sm" href="/training/delete/${var.id}">Delete</a>
+                                        <a class="btn btn-warning btn-sm" href="/training/edit/${var.id}">Edit</a>
+                                        <a class="btn btn-danger btn-sm" href="/training/delete/${var.id}">Delete</a>
                                     </td>
                                 </tr>
                             </c:forEach>
