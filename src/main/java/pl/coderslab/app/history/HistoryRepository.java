@@ -1,8 +1,6 @@
 package pl.coderslab.app.history;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.data.jpa.repository.Query;
-
 import java.util.List;
 
 public interface HistoryRepository extends JpaRepository<History, Long> {
@@ -14,4 +12,6 @@ public interface HistoryRepository extends JpaRepository<History, Long> {
     History findTopHistoryByUserIdAndExerciseIdOrderByWeightDesc(Long userId, Long exerciseId);
 
     History findTopHistoryByUserIdAndExerciseIdOrderByWeightAsc(Long userId, Long exerciseId);
+
+    void deleteAllHistoryByTrainingId(Long trainingId);
 }

@@ -1,7 +1,6 @@
 package pl.coderslab.app.history;
 
 import lombok.*;
-import org.hibernate.annotations.Cascade;
 import pl.coderslab.app.training.Training;
 import pl.coderslab.app.exercise.Exercise;
 import pl.coderslab.app.user.User;

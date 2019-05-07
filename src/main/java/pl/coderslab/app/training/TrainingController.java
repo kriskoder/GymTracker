@@ -1,6 +1,5 @@
 package pl.coderslab.app.training;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.*;
@@ -58,7 +57,7 @@ public class TrainingController {
 
     @GetMapping("/delete/{id}")
     public String deleteTrainingById(@PathVariable Long id){
-        trainingService.deleteTraining(id);
+        historyService.deleteHistoryByTraining(id);
         return "redirect:/training";
     }
 

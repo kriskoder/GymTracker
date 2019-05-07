@@ -1,11 +1,8 @@
 package pl.coderslab.app.history;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
-import pl.coderslab.app.exercise.ExerciseRepository;
 import pl.coderslab.app.training.Training;
 import pl.coderslab.app.user.User;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -19,10 +16,14 @@ public class HistoryService {
         this.historyRepository = historyRepository;
     }
 
-    public void create(History history, Training training, User user){
+    public void create(History history, Training training, User user) {
         history.setTraining(training);
         history.setUser(user);
         historyRepository.save(history);
+    }
+
+    public void deleteHistoryByTraining(Long trainingId) {
+        historyRepository.deleteAllHistoryByTrainingId(trainingId);
     }
 
     public List<History> getExerciseHistory(Long userId, Long exerciseId) {

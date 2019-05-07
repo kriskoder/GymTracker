@@ -1,9 +1,7 @@
 package pl.coderslab.app.training;
 
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import pl.coderslab.app.user.User;
-
 import javax.transaction.Transactional;
 import java.util.List;
 
@@ -35,9 +33,5 @@ public class TrainingService {
 
     public List<Training> getAllUserTrainings(Long id){
         return trainingRepository.findAllByUserIdOrderByCreatedDesc(id);
-    }
-
-    public void deleteTraining(Long trainingId){
-        trainingRepository.deleteById(trainingId);
     }
 }
