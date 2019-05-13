@@ -5,9 +5,11 @@ App is designated to record progress on exercises made during gym workouts. Logg
 
 2.**Technologies**
  - Java
- - Spring
+ - Spring MVC
+ - Spring Form
  - Hibernate
  - MySQL
+ - Lombok
  
 3.**How to open this project**
 GymTracker is build as a Maven Project and runs on Tomcat Server. It also has to be connected to MySQL database. All dependencies are already in pom.xml.
